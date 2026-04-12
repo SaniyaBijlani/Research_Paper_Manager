@@ -1,0 +1,194 @@
+.editor-layout {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height));
+  padding-bottom: 2rem;
+}
+
+.editor-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auto-save-text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-badge-green);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.word-count {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  margin-right: 0.5rem;
+}
+
+.editor-main {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0; 
+}
+
+/* Editor Sidebar */
+.editor-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  padding: 0 0.75rem;
+}
+
+.sections-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.section-btn {
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.section-btn:hover {
+  background-color: #f3f4f6;
+  color: var(--color-text-main);
+}
+
+.section-btn.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Editor Canvas */
+.editor-canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.toolbar {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.toolbar-group:last-of-type {
+  border-right: none;
+}
+
+.toolbar-btn {
+  color: var(--color-text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.toolbar-btn:hover {
+  background-color: #f3f4f6;
+  color: var(--color-text-main);
+}
+
+.toolbar-btn.text-icon {
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: serif;
+}
+
+.ms-auto {
+  margin-left: auto;
+}
+
+.flex-gap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.writing-area {
+  padding: 2.5rem 3rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.writing-area h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.section-meta {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.prose p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  margin-bottom: 1.25rem;
+}
+
+/* CSS specific additions for Editor */
+.flex-col {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.prose-textarea {
+  flex: 1;
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: inherit;
+  color: var(--color-text-main);
+  background: transparent;
+  outline: none;
+  min-height: 300px;
+}

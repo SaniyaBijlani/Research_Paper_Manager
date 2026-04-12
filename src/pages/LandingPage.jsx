@@ -1,0 +1,138 @@
+import { Link } from 'react-router-dom';
+import { FileText, Users, ArrowRight, Zap, BookOpen, Quote, User } from 'lucide-react';
+import './LandingPage.css';
+
+function LandingPage() {
+  return (
+    <div className="landing-layout">
+      {/* Top Nav inside Landing Page */}
+      <header className="landing-nav">
+        <div className="landing-logo">
+          <div className="landing-logo-icon">
+            <FileText size={20} color="white" />
+          </div>
+          <span className="landing-brand">Research Flow</span>
+        </div>
+        <div className="landing-nav-links">
+          <a href="#about">About the Ecosystem</a>
+          <a href="#how-it-works">How it works</a>
+          <Link to="/dashboard" className="btn-primary-small">
+            Start Writing
+          </Link>
+          <Link to="/profile" className="landing-profile-icon" title="Complete Profile" style={{ color: 'var(--color-primary)' }}>
+            <User size={18} />
+          </Link>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <main className="hero-section">
+        <div className="hero-content">
+          <div className="inline-badge">
+            <span className="badge-pulse"></span>
+            Now in open beta for researchers
+          </div>
+          
+          <h1 className="hero-title">
+            The intelligent workspace for <span className="text-gradient">research teams</span>.
+          </h1>
+          
+          <p className="hero-subtitle">
+            Say goodbye to scattered PDFs, chaotic chat logs, and lost references. Research Flow unifies your writing, collaboration, and bibliography into one beautiful, AI-powered platform.
+          </p>
+          
+          <div className="hero-actions">
+            <Link to="/dashboard" className="btn-primary hero-btn">
+              Start Researching <ArrowRight size={18} />
+            </Link>
+            <button className="btn-outline-dark hero-btn">
+              Watch Demo
+            </button>
+          </div>
+          
+          <div className="hero-stats">
+            <div className="stat-item">
+              <strong>10k+</strong>
+              <span>Papers Written</span>
+            </div>
+            <div className="stat-separator"></div>
+            <div className="stat-item">
+              <strong>4.9/5</strong>
+              <span>User Rating</span>
+            </div>
+            <div className="stat-separator"></div>
+            <div className="stat-item">
+              <strong>120+</strong>
+              <span>Universities</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Abstract floating UI representation */}
+        <div className="hero-visual">
+          <div className="floating-card c1 card">
+            <div className="c-icon blue"><FileText size={16}/></div>
+            <div className="c-lines">
+              <div className="c-line long"></div>
+              <div className="c-line short"></div>
+            </div>
+          </div>
+          
+          <div className="floating-card c2 card">
+            <div className="c-icon purple"><Users size={16}/></div>
+            <div className="c-lines">
+               <div className="c-line medium"></div>
+            </div>
+            <div className="c-avatars">
+              <div className="c-av">JD</div>
+              <div className="c-av">AS</div>
+            </div>
+          </div>
+          
+          <div className="floating-card c3 card">
+             <div className="c-icon green"><Zap size={16}/></div>
+             <p className="c-text">Auto-formatting references...</p>
+          </div>
+        </div>
+      </main>
+
+      {/* About Us / Ecosystem Section */}
+      <section id="about" className="about-section">
+        <div className="about-container">
+          <div className="about-header">
+            <h2 className="title-section">The Ultimate Ecosystem for Research Students</h2>
+            <p className="subtitle-section">We are serving the next generation of academic minds by breaking down the silos between reading, writing, and collaboration.</p>
+          </div>
+
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon bg-blue-muted">
+                <BookOpen size={24} className="text-blue" />
+              </div>
+              <h3>Centralized Knowledge</h3>
+              <p>Store your PDFs, annotations, and references in one searchable vault. Never lose track of a paper again when writing your literature reviews.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon bg-purple-muted">
+                <Users size={24} className="text-purple" />
+              </div>
+              <h3>Real-time Collaboration</h3>
+              <p>Work with your lab mates seamlessly. Leave comments, track historical changes, and divide writing sections seamlessly across multiple authors.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon bg-green-muted">
+                <Quote size={24} className="text-green" />
+              </div>
+              <h3>Smart Citation Management</h3>
+              <p>The days of manually formatting bibliographies are over. Our AI automatically tracks your references and builds perfect citations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default LandingPage;

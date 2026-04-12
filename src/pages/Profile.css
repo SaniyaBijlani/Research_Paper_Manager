@@ -1,0 +1,125 @@
+.profile-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(243, 244, 246, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
+  padding: 2rem;
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-icon-large {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+}
+
+.profile-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.profile-header p {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  color: var(--color-text-main);
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  outline: none;
+  appearance: none;
+}
+
+.input-with-icon select {
+  cursor: pointer;
+}
+
+.input-with-icon select.placeholder-active {
+  color: #9ca3af;
+}
+
+.input-with-icon input:focus,
+.input-with-icon select:focus {
+  background-color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
