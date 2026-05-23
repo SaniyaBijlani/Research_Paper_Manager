@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProjects } from '../context/ProjectContext';
 import { User, Mail, Briefcase, BookOpen, ArrowRight } from 'lucide-react';
@@ -7,10 +7,16 @@ import './Profile.css';
 function Profile() {
   const { userProfile, setUserProfile } = useProjects();
   const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app we'd validate here
+    const email = userProfile.email || '';
+    if (!email.includes('@') || !email.includes('.')) {
+      setError(true);
+      return;
+    }
+    setError(false);
     navigate('/dashboard');
   };
 
@@ -48,7 +54,7 @@ function Profile() {
 
           <div className="form-group">
             <label>Email Address</label>
-            <div className="input-with-icon">
+            <div className={`input-with-icon ${error ? 'input-error' : ''}`}>
               <Mail size={18} className="input-icon" />
               <input 
                 type="email" 
@@ -56,9 +62,13 @@ function Profile() {
                 required
                 placeholder="e.g., jane.doe@university.edu"
                 value={userProfile.email}
-                onChange={handleChange}
+                onChange={(e) => {
+                  setError(false);
+                  handleChange(e);
+                }}
               />
             </div>
+            {error && <span className="error-text">enter valid email address</span>}
           </div>
 
           <div className="form-group">

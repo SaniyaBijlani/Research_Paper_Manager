@@ -5,10 +5,9 @@ import { useProjects } from '../context/ProjectContext';
 import './Dashboard.css';
 
 function Dashboard() {
-  const { projects, addProject, setActiveProjectId } = useProjects();
+  const { projects, addProject, setActiveProjectId, searchQuery, setSearchQuery } = useProjects();
   const navigate = useNavigate();
   
-  const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
 
   const handleNewProject = () => {

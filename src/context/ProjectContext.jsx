@@ -10,11 +10,13 @@ const initialProjects = [
 ];
 
 const initialReferences = [
-  { id: 'r1', title: 'A Survey of Quantum Computing', authors: 'Chen, W.', year: '2023', doi: '10.1007/qc2023', tags: ['Quantum Survey', 'Journal'] },
-  { id: 'r2', title: 'BERT: Pre-training of Deep Bidirectional Transformers', authors: 'Devlin, J. et al.', year: '2019', doi: '', tags: ['NLP Education', 'Conference'] },
+  { id: 'r1', title: 'A Survey of Quantum Computing', authors: 'Chen, W.', year: '2023', doi: '10.1007/qc2023', tags: ['Quantum Survey', 'Survey', 'Journal'] },
+  { id: 'r2', title: 'BERT: Pre-training of Deep Bidirectional Transformers', authors: 'Devlin, J. et al.', year: '2019', doi: '', tags: ['NLP Education', 'Conference', 'Preprint'] },
   { id: 'r3', title: 'Ethics in AI Research', authors: 'Patel, R. & Kim, S.', year: '2025', doi: '', tags: ['ML Healthcare', 'Book'] },
   { id: 'r4', title: 'Deep Learning for Medical Imaging', authors: 'Smith, J. & Lee, K.', year: '2024', doi: '10.1234/dlmi.2024', tags: ['ML Healthcare', 'Journal'] },
-  { id: 'r5', title: 'Attention Is All You Need', authors: 'Vaswani, A. et al.', year: '2017', doi: '10.5555/3295222', tags: ['NLP Education', 'Conference'] }
+  { id: 'r5', title: 'Attention Is All You Need', authors: 'Vaswani, A. et al.', year: '2017', doi: '10.5555/3295222', tags: ['NLP Education', 'Conference'] },
+  { id: 'r6', title: 'Decentralized Privacy-Preserving Machine Learning', authors: 'Wang, X.', year: '2024', doi: '', tags: ['Thesis', 'ML Healthcare'] },
+  { id: 'r7', title: 'Web-Scale Information Retrieval Systems', authors: 'Brin, S. & Page, L.', year: '2012', doi: '', tags: ['Website', 'NLP Education'] }
 ];
 
 export function ProjectProvider({ children }) {
@@ -23,6 +25,9 @@ export function ProjectProvider({ children }) {
   
   // References Global State
   const [references, setReferences] = useState(initialReferences);
+  
+  // Global Search State
+  const [searchQuery, setSearchQuery] = useState('');
 
   const addProject = () => {
     const newId = `p${Date.now()}`;
@@ -90,7 +95,9 @@ export function ProjectProvider({ children }) {
       updateReferenceTitle,
       deleteReference,
       userProfile,
-      setUserProfile
+      setUserProfile,
+      searchQuery,
+      setSearchQuery
     }}>
       {children}
     </ProjectContext.Provider>

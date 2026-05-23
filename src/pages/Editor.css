@@ -128,6 +128,11 @@
   color: var(--color-text-main);
 }
 
+.toolbar-btn.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
 .toolbar-btn.text-icon {
   font-size: 0.875rem;
   font-weight: 600;
@@ -191,4 +196,64 @@
   background: transparent;
   outline: none;
   min-height: 300px;
+}
+
+/* Focus Mode styles */
+.editor-layout.focus-mode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000; /* overlay everything, including sidebar and header */
+  background-color: var(--color-bg);
+  padding: 3rem;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.editor-layout.focus-mode .editor-topbar {
+  display: none;
+}
+
+.editor-layout.focus-mode .editor-sidebar {
+  display: none;
+}
+
+.editor-layout.focus-mode .editor-main {
+  height: 100%;
+}
+
+.editor-layout.focus-mode .editor-canvas {
+  height: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.prose-editor {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prose-editor:empty::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+  display: block;
+}
+
+.prose-editor h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-editor h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.875rem;
+  margin-bottom: 0.5rem;
 }

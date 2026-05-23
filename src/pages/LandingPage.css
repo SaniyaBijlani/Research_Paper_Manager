@@ -401,3 +401,67 @@ html {
   line-height: 1.6;
   color: var(--color-text-muted);
 }
+
+/* Developer Profile Quick Link Bar Styles */
+.developer-footer {
+  background-color: #1e40af; /* Dark blue color */
+  color: white;
+  padding: 1.25rem 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.dev-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dev-bio {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  opacity: 0.95;
+  color: white;
+}
+
+.dev-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.dev-link:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .developer-footer {
+    padding: 1.25rem 2rem;
+  }
+  
+  .dev-footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dev-links {
+    justify-content: center;
+  }
+}

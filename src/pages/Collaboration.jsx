@@ -101,11 +101,11 @@ function Collaboration() {
             <div className="card-header">
               <h2>Comments</h2>
             </div>
-            
+
             <div className="comment-input-area">
-              <input 
-                type="text" 
-                placeholder="Add a comment..." 
+              <input
+                type="text"
+                placeholder="Add a comment..."
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}

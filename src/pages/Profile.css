@@ -123,3 +123,30 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+/* Validation styling */
+.error-text {
+  color: #ef4444;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-top: 0.375rem;
+  text-align: left;
+  line-height: 1.4;
+  display: block;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.input-with-icon.input-error input {
+  border-color: #f87171;
+  background-color: #fff5f5;
+}
+
+.input-with-icon.input-error input:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
