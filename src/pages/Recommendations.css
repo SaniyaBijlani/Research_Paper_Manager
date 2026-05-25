@@ -75,3 +75,21 @@
   border-color: var(--color-badge-green);
   color: white;
 }
+
+/* Responsive Recommendations Styles */
+@media (max-width: 640px) {
+  .rec-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .rec-icon-bg {
+    align-self: flex-start;
+  }
+
+  .btn-add-library {
+    width: 100%;
+    justify-content: center;
+  }
+}

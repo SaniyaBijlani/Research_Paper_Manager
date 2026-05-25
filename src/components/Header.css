@@ -73,3 +73,33 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+/* Responsive Header Styles */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .app-header {
+    padding: 0 1rem;
+  }
+  
+  .header-left, .header-right {
+    gap: 0.75rem;
+  }
+
+  .search-bar {
+    width: 200px;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    width: 140px;
+  }
+}

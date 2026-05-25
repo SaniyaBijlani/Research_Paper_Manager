@@ -1,10 +1,10 @@
-import { Search, Bell, PanelLeftClose } from 'lucide-react';
+import { Search, Bell, PanelLeftClose, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useProjects } from '../context/ProjectContext';
 import './Header.css';
 
 function Header() {
-  const { searchQuery, setSearchQuery, userProfile } = useProjects();
+  const { searchQuery, setSearchQuery, userProfile, isSidebarOpen, setIsSidebarOpen } = useProjects();
   const navigate = useNavigate();
 
   const getAvatarInitials = () => {
@@ -26,8 +26,12 @@ function Header() {
   return (
     <header className="app-header">
       <div className="header-left">
-        <button className="icon-button">
-          <PanelLeftClose size={20} />
+        <button 
+          className="icon-button menu-toggle" 
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          aria-label="Toggle Navigation Menu"
+        >
+          {isSidebarOpen ? <PanelLeftClose size={20} /> : <Menu size={20} />}
         </button>
         <div className="search-bar">
           <Search size={18} className="search-icon" />

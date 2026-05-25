@@ -182,3 +182,57 @@
     opacity: 0.6;
   }
 }
+
+/* Responsive My Papers Styles */
+@media (max-width: 768px) {
+  .papers-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .papers-header .btn-primary {
+    align-self: flex-start;
+  }
+
+  .papers-toolbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .papers-toolbar .search-box {
+    width: 100%;
+  }
+
+  .papers-toolbar .filter-select {
+    width: 100%;
+  }
+
+  .paper-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .paper-progress-container {
+    width: 100%;
+  }
+
+  .more-btn {
+    opacity: 1;
+    align-self: flex-end;
+  }
+  
+  .paper-meta {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .papers-header .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+}

@@ -180,3 +180,68 @@
   font-size: 0.75rem;
   color: var(--color-text-muted);
 }
+
+/* Responsive Dashboard Styles */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .dashboard-header .btn-primary {
+    align-self: flex-start;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .projects-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .projects-actions .search-box {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .projects-actions .search-box input {
+    width: 100%;
+  }
+
+  .projects-actions .btn-outline {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .dashboard-header .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+}

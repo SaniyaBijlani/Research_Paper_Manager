@@ -209,6 +209,19 @@ function Editor() {
               <Maximize size={16} /> {isFocusMode ? 'Exit Focus' : 'Focus'}
             </button>
           </div>
+
+          {/* Mobile-only horizontal section tabs */}
+          <div className="mobile-sections-tabs">
+            {sections.map((section, idx) => (
+              <button 
+                key={section} 
+                className={`mobile-section-tab ${idx === activeSection ? 'active' : ''}`}
+                onClick={() => setActiveSection(idx)}
+              >
+                {section}
+              </button>
+            ))}
+          </div>
           
           <div className="writing-area flex-col">
             <h2>{sections[activeSection]}</h2>

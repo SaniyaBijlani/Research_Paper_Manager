@@ -82,6 +82,9 @@ export function ProjectProvider({ children }) {
     field: ''
   });
 
+  // Mobile sidebar visibility state
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <ProjectContext.Provider value={{ 
       projects, 
@@ -97,7 +100,9 @@ export function ProjectProvider({ children }) {
       userProfile,
       setUserProfile,
       searchQuery,
-      setSearchQuery
+      setSearchQuery,
+      isSidebarOpen,
+      setIsSidebarOpen
     }}>
       {children}
     </ProjectContext.Provider>

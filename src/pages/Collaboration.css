@@ -271,3 +271,11 @@
   color: var(--color-text-main);
   line-height: 1.5;
 }
+
+/* Responsive Collaboration Styles */
+@media (max-width: 992px) {
+  .collaboration-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
